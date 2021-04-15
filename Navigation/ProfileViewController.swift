@@ -93,7 +93,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
               let profileHeaderView = profileHeaderView else { return nil }
         let view = UIView()
         view.addSubview(profileHeaderView)
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = UIColor.Subview.background
         
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         let headerConstraints = [

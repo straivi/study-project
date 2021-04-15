@@ -14,4 +14,12 @@ enum AppImage {
     static let logo = UIImage(named: "logo")
     
     static let imageBlueBackground = UIImage(named: "blue_pixel")
+    
+    static let arrowForwardSymbol = UIImage(named: "arrow_forward")
+    
+    static let multiplyCircleSymbol = UIImage(named: "multiply_circle")
+    
+    static let houseFillSymbol = UIImage(named: "house_fill")
+    
+    static let personFillSymbol = UIImage(named: "person_fill")
 }

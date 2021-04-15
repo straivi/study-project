@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		060782B2250CE27700A87020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B1250CE27700A87020 /* AppDelegate.swift */; };
-		060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B3250CE27700A87020 /* SceneDelegate.swift */; };
 		060782B6250CE27700A87020 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782B5250CE27700A87020 /* FeedViewController.swift */; };
 		060782B9250CE27700A87020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060782B7250CE27700A87020 /* Main.storyboard */; };
 		060782BB250CE27A00A87020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 060782BA250CE27A00A87020 /* Assets.xcassets */; };
@@ -23,6 +22,7 @@
 		BA1BD3F525CE18C400E4B240 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BD3F425CE18C400E4B240 /* PhotoCollectionViewCell.swift */; };
 		BA33480E25C0AB0A00F5AB72 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33480D25C0AB0A00F5AB72 /* PaddingTextField.swift */; };
 		BA5F8E6225BE493100AEDC47 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5F8E6125BE493100AEDC47 /* LogInViewController.swift */; };
+		BA70030E2628993200FDA8CF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA70030D2628993200FDA8CF /* MainTabBarController.swift */; };
 		BA7F90BF25A6A7BA00CB0A44 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F90BE25A6A7BA00CB0A44 /* ProfileHeaderView.swift */; };
 		BA7F90C325A6A7EA00CB0A44 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7F90C225A6A7EA00CB0A44 /* ProfileViewController.swift */; };
 		BA83A3EE25C48BCA00288F55 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83A3ED25C48BCA00288F55 /* AppColor.swift */; };
@@ -32,7 +32,6 @@
 /* Begin PBXFileReference section */
 		060782AE250CE27700A87020 /* StudyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		060782B1250CE27700A87020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		060782B3250CE27700A87020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		060782B5250CE27700A87020 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		060782B8250CE27700A87020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		060782BA250CE27A00A87020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		BA1BD3F425CE18C400E4B240 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA33480D25C0AB0A00F5AB72 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		BA5F8E6125BE493100AEDC47 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		BA70030D2628993200FDA8CF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BA7F90BE25A6A7BA00CB0A44 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileHeaderView.swift; path = Navigation/ProfileHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		BA7F90C225A6A7EA00CB0A44 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Navigation/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		BA83A3ED25C48BCA00288F55 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -84,17 +84,9 @@
 		060782B0250CE27700A87020 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				060782B1250CE27700A87020 /* AppDelegate.swift */,
-				BAFAF1A625BF9FF300EC07D8 /* AppImage.swift */,
-				BA83A3ED25C48BCA00288F55 /* AppColor.swift */,
-				BA33480D25C0AB0A00F5AB72 /* PaddingTextField.swift */,
-				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
-				060782C7250CEE5D00A87020 /* PostViewController.swift */,
-				060782C9250CEE7200A87020 /* Post.swift */,
-				BA1BD3EF25CE126500E4B240 /* Photos */,
-				BA7F90BD25A6A78D00CB0A44 /* Profile */,
-				060782B3250CE27700A87020 /* SceneDelegate.swift */,
-				060782B5250CE27700A87020 /* FeedViewController.swift */,
+				BA7003062628917400FDA8CF /* Application */,
+				BA7003082628924B00FDA8CF /* VIew */,
+				BA70031026289E3700FDA8CF /* Services */,
 				060782B7250CE27700A87020 /* Main.storyboard */,
 				060782BA250CE27A00A87020 /* Assets.xcassets */,
 				060782BC250CE27A00A87020 /* LaunchScreen.storyboard */,
@@ -110,6 +102,54 @@
 				BA1BD3F425CE18C400E4B240 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Photos;
+			sourceTree = "<group>";
+		};
+		BA7003062628917400FDA8CF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				060782B1250CE27700A87020 /* AppDelegate.swift */,
+				BAFAF1A625BF9FF300EC07D8 /* AppImage.swift */,
+				BA83A3ED25C48BCA00288F55 /* AppColor.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BA7003082628924B00FDA8CF /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				BA70030C2628991C00FDA8CF /* MainTabBar */,
+				BA7F90BD25A6A78D00CB0A44 /* Profile */,
+				BA1BD3EF25CE126500E4B240 /* Photos */,
+				060782C7250CEE5D00A87020 /* PostViewController.swift */,
+				060782C5250CEB0A00A87020 /* InfoViewController.swift */,
+				BA33480D25C0AB0A00F5AB72 /* PaddingTextField.swift */,
+				060782B5250CE27700A87020 /* FeedViewController.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		BA70030C2628991C00FDA8CF /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BA70030D2628993200FDA8CF /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		BA70031026289E3700FDA8CF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA70031126289E4D00FDA8CF /* Models */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA70031126289E4D00FDA8CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				060782C9250CEE7200A87020 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BA7F90BD25A6A78D00CB0A44 /* Profile */ = {
@@ -207,10 +247,10 @@
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
 				BA1BD3ED25CE049E00E4B240 /* PhotosTableViewCell.swift in Sources */,
 				BA1BD3F525CE18C400E4B240 /* PhotoCollectionViewCell.swift in Sources */,
+				BA70030E2628993200FDA8CF /* MainTabBarController.swift in Sources */,
 				BA1BD3F125CE12CF00E4B240 /* PhotosViewController.swift in Sources */,
 				BA7F90BF25A6A7BA00CB0A44 /* ProfileHeaderView.swift in Sources */,
 				BAFAF1A725BF9FF300EC07D8 /* AppImage.swift in Sources */,
-				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
 				BA7F90C325A6A7EA00CB0A44 /* ProfileViewController.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
 			);
@@ -289,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -344,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -361,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N36M22CA6;
 				INFOPLIST_FILE = Navigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9N36M22CA6;
 				INFOPLIST_FILE = Navigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

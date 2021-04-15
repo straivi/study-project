@@ -19,7 +19,7 @@ class PhotosTableViewCell: UITableViewCell {
     
     let arrowImageView: UIImageView = {
         let imageVeiw = UIImageView()
-        imageVeiw.image = UIImage(systemName: "arrow.forward")
+        imageVeiw.image = AppImage.arrowForwardSymbol
         imageVeiw.tintColor = .black
         return imageVeiw
     }()
