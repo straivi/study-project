@@ -21,5 +21,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+            #if DEBUG_VERSION
+            let phrase = "Application moved form inactive to active: \(#function)"
+            print(phrase)
+            #endif
+        }
+        
+        func applicationWillResignActive(_ application: UIApplication) {
+            #if DEBUG_VERSION
+            let phrase = "Application moved form active to inactive: \(#function)"
+            print(phrase)
+            #endif
+        }
+        
+        func applicationWillEnterForeground(_ application: UIApplication) {
+            #if DEBUG_VERSION
+            let phrase = "Application moved form background to inactive: \(#function)"
+            print(phrase)
+            #endif
+        }
+        
+        func applicationDidEnterBackground(_ application: UIApplication) {
+            #if DEBUG_VERSION
+            let phrase = "Application moved form inactive to background: \(#function)"
+            print(phrase)
+            #endif
+        }
+        
+        func applicationWillTerminate(_ application: UIApplication) {
+            #if DEBUG_VERSION
+            let phrase = "Application moved form background to suspended: \(#function)"
+            print(phrase)
+            #endif
+        }
 }
 
