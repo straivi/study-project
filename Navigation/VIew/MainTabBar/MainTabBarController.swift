@@ -16,15 +16,22 @@ class MainTabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let feedVC = sb.instantiateViewController(withIdentifier: String(describing: FeedViewController.self))
-        feedVC.tabBarItem.image = AppImage.houseFillSymbol
-        feedVC.tabBarItem.title = "Feed"
-        
-        let profileVC = sb.instantiateViewController(withIdentifier: String(describing: ProfileViewController.self))
-        profileVC.tabBarItem.image = AppImage.personFillSymbol
-        profileVC.tabBarItem.title = "Profile"
-        
+        let feedVC = configureNavController(with: FeedViewController.self,
+                                            image: AppImage.houseFillSymbol,
+                                            title: "Feed")
+        let profileVC = configureNavController(with: ProfileViewController.self,
+                                               image: AppImage.personFillSymbol,
+                                               title: "Profile")
         viewControllers = [feedVC, profileVC]
+    }
+    
+    private func configureNavController(with viewController: UIViewController.Type, image: UIImage?, title: String?) -> UINavigationController {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier:
+                                                String(describing: viewController.self))
+        let nav = UINavigationController(rootViewController: vc)
+        nav.tabBarItem.image = image
+        nav.title = title
+        return nav
     }
 }
