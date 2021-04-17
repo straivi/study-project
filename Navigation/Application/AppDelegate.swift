@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow()
@@ -23,38 +23,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-            #if DEBUG_VERSION
-            let phrase = "Application moved form inactive to active: \(#function)"
-            print(phrase)
-            #endif
-        }
-        
-        func applicationWillResignActive(_ application: UIApplication) {
-            #if DEBUG_VERSION
-            let phrase = "Application moved form active to inactive: \(#function)"
-            print(phrase)
-            #endif
-        }
-        
-        func applicationWillEnterForeground(_ application: UIApplication) {
-            #if DEBUG_VERSION
-            let phrase = "Application moved form background to inactive: \(#function)"
-            print(phrase)
-            #endif
-        }
-        
-        func applicationDidEnterBackground(_ application: UIApplication) {
-            #if DEBUG_VERSION
-            let phrase = "Application moved form inactive to background: \(#function)"
-            print(phrase)
-            #endif
-        }
-        
-        func applicationWillTerminate(_ application: UIApplication) {
-            #if DEBUG_VERSION
-            let phrase = "Application moved form background to suspended: \(#function)"
-            print(phrase)
-            #endif
-        }
+        let phrase = "Application moved form inactive to active: \(#function)"
+        print(phrase)
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        let phrase = "Application moved form active to inactive: \(#function)"
+        print(phrase)
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        let phrase = "Application moved form background to inactive: \(#function)"
+        print(phrase)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        let phrase = "Application moved form inactive to background: \(#function)"
+        print(phrase)
+        print(UIApplication.shared.backgroundTimeRemaining)
+        // background time remaining 1.7976931348623157e+308
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        let phrase = "Application moved form background to suspended: \(#function)"
+        print(phrase)
+    }
 }
 
