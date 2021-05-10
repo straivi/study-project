@@ -54,9 +54,8 @@ class ProfileHeaderView: UIView {
         fullscreenBackgroundView.addSubview(fullscreenAvatarImageView)
         
         fullscreenBackgroundView.addSubview(closeFullscreenButton)
-        let symbolConf = UIImage.SymbolConfiguration(pointSize: 30)
-        closeFullscreenButton.setImage(UIImage(systemName: "multiply.circle", withConfiguration: symbolConf), for: .normal)
-        closeFullscreenButton.tintColor = .systemGray6
+        closeFullscreenButton.setImage(AppImage.multiplyCircleSymbol, for: .normal)
+        closeFullscreenButton.tintColor = UIColor.Subview.background
         closeFullscreenButton.alpha = 0
         closeFullscreenButton.translatesAutoresizingMaskIntoConstraints = false
         let closeButtonConstraints = [

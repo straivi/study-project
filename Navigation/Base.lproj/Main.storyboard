@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VVa-ty-c3K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +12,7 @@
         <!--Profile-->
         <scene sceneID="bRX-aC-Cpi">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ca1-kw-dKJ" customClass="ProfileViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ca1-kw-dKJ" customClass="ProfileViewController" customModule="StudyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6I-Co-0n3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +28,7 @@
         <!--Log In View Controller-->
         <scene sceneID="u0i-cN-xJh">
             <objects>
-                <viewController storyboardIdentifier="LogInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ucc-gw-buf" customClass="LogInViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ucc-gw-buf" customClass="LogInViewController" customModule="StudyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rZe-Qr-V5J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,35 +42,18 @@
             <point key="canvasLocation" x="742" y="959"/>
         </scene>
         <!--Feed-->
-        <scene sceneID="pR1-4r-6ob">
-            <objects>
-                <navigationController id="vyo-r6-qwt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="house.fill" catalog="system" id="0HN-zR-0uF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jwt-CW-Jdi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="UOy-8g-tjm" kind="relationship" relationship="rootViewController" id="g6E-pk-jmA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mxn-0X-Agz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-142" y="-541"/>
-        </scene>
-        <!--Feed-->
         <scene sceneID="bye-GP-P6Y">
             <objects>
-                <viewController id="UOy-8g-tjm" customClass="FeedViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UOy-8g-tjm" customClass="FeedViewController" customModule="StudyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnQ-fB-PJI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MaP-e7-SY7">
-                                <rect key="frame" x="32" y="64" width="311" height="534"/>
+                                <rect key="frame" x="32" y="20" width="311" height="627"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ru-89-vrk">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="262"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="308.5"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="First post">
                                             <color key="titleColor" systemColor="labelColor"/>
@@ -79,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NE-uq-qck">
-                                        <rect key="frame" x="0.0" y="272" width="311" height="262"/>
+                                        <rect key="frame" x="0.0" y="318.5" width="311" height="308.5"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <state key="normal" title="Second Post">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,9 +93,9 @@
         <!--Post-->
         <scene sceneID="9oM-mS-hYy">
             <objects>
-                <viewController id="Gpo-I4-SnC" customClass="PostViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gpo-I4-SnC" customClass="PostViewController" customModule="StudyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NJr-hs-eEz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="qcf-0q-WgP"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -131,7 +115,7 @@
         <!--Info View Controller-->
         <scene sceneID="4aZ-7w-8te">
             <objects>
-                <viewController id="A8n-Iq-F5E" customClass="InfoViewController" customModule="Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A8n-Iq-F5E" customClass="InfoViewController" customModule="StudyProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CyQ-kq-0CI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,50 +140,11 @@
             </objects>
             <point key="canvasLocation" x="2525" y="-541"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="0O8-tr-oe2">
-            <objects>
-                <tabBarController id="VVa-ty-c3K" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fGo-88-qdc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="vyo-r6-qwt" kind="relationship" relationship="viewControllers" id="hck-4Z-BVs"/>
-                        <segue destination="lWj-Ic-cCh" kind="relationship" relationship="viewControllers" id="xoH-eH-KBA"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kqe-LH-kso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1059" y="-128"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="NxV-Wk-gIN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lWj-Ic-cCh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="SyK-iK-f7q"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hZv-O1-ero">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ucc-gw-buf" kind="relationship" relationship="rootViewController" id="xC5-8o-S51"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8b-38-THj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-142.02898550724638" y="196.875"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="i1W-Pa-6Vy"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
