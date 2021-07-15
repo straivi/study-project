@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iOSIntPackage
 
 class PostTableViewCell: UITableViewCell {
     
@@ -27,6 +28,8 @@ class PostTableViewCell: UITableViewCell {
     let likesLabel = UILabel()
     let viewsLabel = UILabel()
     let postImageView = UIImageView()
+
+    private let imageProcessor = ImageProcessor()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -88,7 +91,12 @@ class PostTableViewCell: UITableViewCell {
     func configure(post: Post) {
         authorLabel.text = post.author
         descriptionLabel.text = post.description
-        postImageView.image = UIImage(named: post.imageName)
+        if let image = UIImage(named: post.imageName) {
+            let invertFilter = ColorFilter.colorInvert
+            imageProcessor.processImage(sourceImage: image, filter: invertFilter) { [weak self] (imageWithFilter) in
+                self?.postImageView.image = imageWithFilter
+            }
+        }
         likesLabel.text = "Likes: \(post.likes)"
         viewsLabel.text = "Views: \(post.views)"
     }
