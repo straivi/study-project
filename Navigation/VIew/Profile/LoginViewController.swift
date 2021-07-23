@@ -1,5 +1,5 @@
 //
-//  LogInViewController.swift
+//  LoginViewController.swift
 //  Navigation
 //
 //  Created by  Matvey on 25.01.2021.
@@ -8,7 +8,11 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LoginViewController: UIViewController {
+
+    // MARK: - Private properties
+
+    private let loginChecker: LoginViewControllerDelegate
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -75,6 +79,8 @@ class LogInViewController: UIViewController {
         button.setBackgroundImage(transparentImage, for: .disabled)
         return button
     }()
+
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,14 +92,26 @@ class LogInViewController: UIViewController {
         super.viewWillAppear(true)
         setupViews()
     }
-    
+
+    // MARK: - Construction
+
+    init(loginChecker: LoginViewControllerDelegate) {
+        self.loginChecker = loginChecker
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     deinit {
         removeKeyboardNotification()
     }
 }
 
-//MARK: Keyboard show/hide
-extension LogInViewController {
+// MARK: - Keyboard show/hide
+
+extension LoginViewController {
     private func registerForKeyboardNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -118,15 +136,18 @@ extension LogInViewController {
     }
 }
 
-extension LogInViewController: UITextFieldDelegate {
+// MARK: - UITextFieldDelegate
+
+extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
 
-//MARK: Setup Layout
-private extension LogInViewController {
+// MARK: - Setup Layout
+
+private extension LoginViewController {
     private func setupViews() {
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
@@ -189,22 +210,27 @@ private extension LogInViewController {
     }
 }
 
-//MARK: Actions
+// MARK: - Actions
 
-extension LogInViewController {
+extension LoginViewController {
     private func setupActions() {
-        loginButton.addTarget(self, action: #selector(pushToProfile), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(startLoginProcess), for: .touchUpInside)
     }
-    
-    @objc private func pushToProfile() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let profileVC = storyBoard.instantiateViewController(withIdentifier: String(describing: ProfileViewController.self)) as? ProfileViewController ?? UIViewController()
-        self.navigationController?.pushViewController(profileVC, animated: true)
-        navigationController?.navigationBar.isHidden = false
+
+    @objc private func startLoginProcess() {
+        let login = loginTextField.text
+        let password = passwordTextField.text
+
+        guard let aLogin = login,
+              let aPassword = password else { return }
+
+        if loginChecker.loginCheck(aLogin) == .success, loginChecker.passwordCheck(aPassword) == .success {
+            dismiss(animated: true)
+        }
     }
 }
 
-//MARK: UIImage extension
+// MARK: - UIImage extension
 
 extension UIImage {
     func alpha(_ value: CGFloat) -> UIImage? {
