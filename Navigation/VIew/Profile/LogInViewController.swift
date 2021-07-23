@@ -30,7 +30,7 @@ class LogInViewController: UIViewController {
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.placeholder = "Email or phone"
-        textField.backgroundColor = UIColor.Subview.background
+        textField.backgroundColor = UIColor.Subview.viewBackground
         textField.tintColor = UIColor.AppColor.accentColor
         textField.delegate = self
         return textField
@@ -42,7 +42,7 @@ class LogInViewController: UIViewController {
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.placeholder = "Password"
-        textField.backgroundColor = UIColor.Subview.background
+        textField.backgroundColor = UIColor.Subview.viewBackground
         textField.tintColor = UIColor.AppColor.accentColor
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.lightGray.cgColor
