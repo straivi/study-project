@@ -16,7 +16,7 @@ class CustomProfileHeaderView: UIView {
     let statusLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor.text.secondary
+        label.textColor = UIColor.Subview.textSecondary
         label.text = "I did it at 6 a.m..."
         label.textAlignment = .left
         return label
@@ -31,7 +31,7 @@ class CustomProfileHeaderView: UIView {
         button.layer.shadowRadius = 4
         button.layer.shadowOpacity = 0.7
         button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = UIColor.button.primary
+        button.backgroundColor = UIColor.Subview.buttonPrimary
         return button
     }()
 
@@ -84,9 +84,8 @@ class CustomProfileHeaderView: UIView {
     private let closeFullscreenButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(AppImage.multiplyCircleSymbol, for: .normal)
-        button.tintColor = UIColor.Subview.background
+        button.tintColor = UIColor.Subview.viewBackground
         button.alpha = 0
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
