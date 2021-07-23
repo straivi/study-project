@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileViewController: UIViewController {
     
     private var tableView = UITableView(frame: .zero)
-    private var profileHeaderView = ProfileHeaderView.loadFromNib()
-    private lazy var statusText = profileHeaderView?.statusLabel.text ?? ""
+    private var profileHeaderView = CustomProfileHeaderView()
+    private lazy var statusText = profileHeaderView.statusLabel.text ?? ""
     private var fullScreenView = UIView()
     private var fullScreenAvatarView = UIImageView(image: AppImage.profilePlaceholder)
     
@@ -33,24 +34,21 @@ class ProfileViewController: UIViewController {
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: String(describing: PostTableViewCell.self))
         
         view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        let tableVeiwConstrints = [
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ]
-        NSLayoutConstraint.activate(tableVeiwConstrints)
     }
     
     private func setupActions() {
-        profileHeaderView?.statusButton.addTarget(self, action: #selector(statusButtonTapped), for: .touchUpInside)
-        profileHeaderView?.statusEditTextField.addTarget(self, action: #selector(statusTextChanged), for: .editingChanged)
+        profileHeaderView.statusButton.addTarget(self, action: #selector(statusButtonTapped), for: .touchUpInside)
+        profileHeaderView.statusEditTextField.addTarget(self, action: #selector(statusTextChanged), for: .editingChanged)
     }
     
     @objc private func statusButtonTapped(_ sender: UIButton) {
-        profileHeaderView?.statusLabel.text = statusText
+        profileHeaderView.statusLabel.text = statusText
     }
     
     @objc private func statusTextChanged(_ textField: UITextField) {
@@ -89,11 +87,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard section == 0,
-              let profileHeaderView = profileHeaderView else { return nil }
+        guard section == 0 else { return nil }
         let view = UIView()
         view.addSubview(profileHeaderView)
-        view.backgroundColor = UIColor.Subview.background
+        view.backgroundColor = UIColor.Subview.viewBackground
         
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         let headerConstraints = [

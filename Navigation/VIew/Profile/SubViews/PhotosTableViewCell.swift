@@ -35,21 +35,15 @@ class PhotosTableViewCell: UITableViewCell {
     
     private func setupViews() {
         contentView.addSubview(photosLabel)
-        photosLabel.translatesAutoresizingMaskIntoConstraints = false
-        let photosLabelConstraints = [
-            photosLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            photosLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12)
-        ]
-        NSLayoutConstraint.activate(photosLabelConstraints)
+        photosLabel.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().offset(12)
+        }
         
         contentView.addSubview(arrowImageView)
-        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
-        let arrowImageVeiwConstraints = [
-            arrowImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-            arrowImageView.centerYAnchor.constraint(equalTo: photosLabel.centerYAnchor)
-            
-        ]
-        NSLayoutConstraint.activate(arrowImageVeiwConstraints)
+        arrowImageView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-12)
+            make.centerY.equalTo(photosLabel.snp.centerY)
+        }
         
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -62,15 +56,12 @@ class PhotosTableViewCell: UITableViewCell {
         stackView.addArrangedSubview(createСonfiguredImageVeiw(imageName: "4"))
         
         contentView.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        let stackViewContraints = [
-            stackView.topAnchor.constraint(equalTo: photosLabel.bottomAnchor, constant: 12),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
-            stackView.heightAnchor.constraint(equalToConstant: 65)
-        ]
-        NSLayoutConstraint.activate(stackViewContraints)
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(photosLabel.snp.bottom).offset(12)
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.bottom.equalToSuperview().offset(-12)
+            make.height.equalTo(65)
+        }
     }
     
     private func createСonfiguredImageVeiw(imageName: String) -> UIImageView {
