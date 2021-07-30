@@ -88,7 +88,7 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(post: Post) {
+    func configure(post: PostModel) {
         authorLabel.text = post.author
         descriptionLabel.text = post.description
         if let image = UIImage(named: post.imageName) {

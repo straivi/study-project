@@ -14,7 +14,7 @@ extension UIColor {
     }
     
     enum Subview {
-        static let viewBackground = UIColor(named: "backgroung_color")
+        static let viewBackground = UIColor(named: "background_color")
 
         static let textSecondary = UIColor(named: "text_secondary")
 

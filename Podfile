@@ -6,7 +6,7 @@ target 'StudyProject' do
   use_frameworks!
 
   # Pods for StudyProject
-	pod 'SnapKit'
+	pod 'SnapKit', '>= 5.0.1'
 
 end
 
