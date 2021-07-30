@@ -8,16 +8,16 @@
 
 import Foundation
 
-class LoginInspector: LoginViewControllerDelegate {
+class LoginInspector: LoginCheckerProtocol {
 
     // MARK: - Functions
 
     func loginCheck(_ login: String) -> CheckResult {
-        return login == Checker.instance.login ? .success : .error
+        return Checker.instance.loginCheck(login)
     }
 
     func passwordCheck(_ password: String) -> CheckResult {
-        return password == Checker.instance.password ? .success : .error
+        return Checker.instance.passwordCheck(password)
     }
 
 

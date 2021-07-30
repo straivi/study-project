@@ -12,8 +12,8 @@ class LoginViewController: UIViewController {
 
     // MARK: - Private properties
 
-    private let loginChecker: LoginViewControllerDelegate
-    
+    private let loginChecker: LoginCheckerProtocol
+
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.delaysContentTouches = false
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
 
     // MARK: - Construction
 
-    init(loginChecker: LoginViewControllerDelegate) {
+    init(loginChecker: LoginCheckerProtocol) {
         self.loginChecker = loginChecker
         super.init(nibName: nil, bundle: nil)
     }
@@ -224,7 +224,7 @@ extension LoginViewController {
         guard let aLogin = login,
               let aPassword = password else { return }
 
-        if loginChecker.loginCheck(aLogin) == .success, loginChecker.passwordCheck(aPassword) == .success {
+		if loginChecker.loginCheck(aLogin) == .success, loginChecker.passwordCheck(aPassword) == .success {
             dismiss(animated: true)
         }
     }

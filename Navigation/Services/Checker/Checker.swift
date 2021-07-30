@@ -16,10 +16,20 @@ class Checker {
 
     // MARK: - Private properties
 
-    let login = "Matvey"
-    let password = "qwerty"
+    private let login = "Matvey"
+    private let password = "qwerty"
 
     // MARK: - Construction
 
     private init () {}
+
+	// MARK: - Function
+
+	func loginCheck(_ login: String) -> CheckResult {
+		return login == self.login ? .success : .error
+	}
+
+	func passwordCheck(_ password: String) -> CheckResult {
+		return password == self.password ? .success : .error
+	}
 }

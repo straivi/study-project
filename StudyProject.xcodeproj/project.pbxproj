@@ -45,7 +45,7 @@
 		BA7003292628A15500FDA8CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 060782B7250CE27700A87020 /* Main.storyboard */; };
 		BA7B7E4626A8D8CD00AE946F /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E4526A8D8CD00AE946F /* Checker.swift */; };
 		BA7B7E4C26A8DD7E00AE946F /* LoginInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E4B26A8DD7E00AE946F /* LoginInspector.swift */; };
-		BA7B7E5026A8DDE100AE946F /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E4F26A8DDE100AE946F /* LoginViewControllerDelegate.swift */; };
+		BA7B7E5026A8DDE100AE946F /* LoginCheckerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E4F26A8DDE100AE946F /* LoginCheckerProtocol.swift */; };
 		BA7B7E5426A8DE5100AE946F /* CheckResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E5326A8DE5100AE946F /* CheckResult.swift */; };
 		BA7B7E6A26AB55F300AE946F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E6926AB55F300AE946F /* FeedView.swift */; };
 		BA7B7E6B26AB55F300AE946F /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7B7E6926AB55F300AE946F /* FeedView.swift */; };
@@ -83,10 +83,9 @@
 		BA5F8E6125BE493100AEDC47 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA70030D2628993200FDA8CF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BA70032E2628A15500FDA8CF /* StudyProject copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StudyProject copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA70032F2628A15500FDA8CF /* StudyProject copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StudyProject copy-Info.plist"; path = "/Users/matvey/Documents/prog/Active projects/StudyProject/StudyProject copy-Info.plist"; sourceTree = "<absolute>"; };
 		BA7B7E4526A8D8CD00AE946F /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		BA7B7E4B26A8DD7E00AE946F /* LoginInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInspector.swift; sourceTree = "<group>"; };
-		BA7B7E4F26A8DDE100AE946F /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
+		BA7B7E4F26A8DDE100AE946F /* LoginCheckerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCheckerProtocol.swift; sourceTree = "<group>"; };
 		BA7B7E5326A8DE5100AE946F /* CheckResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckResult.swift; sourceTree = "<group>"; };
 		BA7B7E6926AB55F300AE946F /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		BA7B7E7026AC481900AE946F /* FeedViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewOutputProtocol.swift; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 			children = (
 				060782B0250CE27700A87020 /* Navigation */,
 				060782AF250CE27700A87020 /* Products */,
-				BA70032F2628A15500FDA8CF /* StudyProject copy-Info.plist */,
 				124F134555B4EA14AAB3F81B /* Pods */,
 				B677AE741CB37E00027F21C7 /* Frameworks */,
 			);
@@ -143,7 +141,6 @@
 		060782B0250CE27700A87020 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				BAB1261926853457002865E7 /* New Group */,
 				BA7003062628917400FDA8CF /* Application */,
 				BA7003082628924B00FDA8CF /* VIew */,
 				BA70031026289E3700FDA8CF /* Services */,
@@ -286,16 +283,9 @@
 				BA34E320267FF3B700A0677F /* SubViews */,
 				BA7F90C225A6A7EA00CB0A44 /* ProfileViewController.swift */,
 				BA5F8E6125BE493100AEDC47 /* LoginViewController.swift */,
-				BA7B7E4F26A8DDE100AE946F /* LoginViewControllerDelegate.swift */,
+				BA7B7E4F26A8DDE100AE946F /* LoginCheckerProtocol.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		BAB1261926853457002865E7 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,7 +472,7 @@
 				BA83A3EE25C48BCA00288F55 /* AppColor.swift in Sources */,
 				BA7B7E4626A8D8CD00AE946F /* Checker.swift in Sources */,
 				BA7B7E4C26A8DD7E00AE946F /* LoginInspector.swift in Sources */,
-				BA7B7E5026A8DDE100AE946F /* LoginViewControllerDelegate.swift in Sources */,
+				BA7B7E5026A8DDE100AE946F /* LoginCheckerProtocol.swift in Sources */,
 				060782CA250CEE7200A87020 /* PostModel.swift in Sources */,
 				BA1BD3ED25CE049E00E4B240 /* PhotosTableViewCell.swift in Sources */,
 				BA1BD3F525CE18C400E4B240 /* PhotoCollectionViewCell.swift in Sources */,

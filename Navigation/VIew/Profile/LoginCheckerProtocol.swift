@@ -1,5 +1,5 @@
 //
-//  LoginViewControllerDelegate.swift
+//  LoginCheckerProtocol.swift
 //  StudyProject
 //
 //  Created by  Matvey on 22.07.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoginViewControllerDelegate: AnyObject {
+protocol LoginCheckerProtocol {
 
     // MARK: - Functions
 
